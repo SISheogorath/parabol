@@ -22,6 +22,7 @@ import RetrospectiveMeeting from './RetrospectiveMeeting'
 import Team from './Team'
 import TeamMember from './TeamMember'
 import {MeetingTypeEnum as MeetingTypeEnumType} from '../../postgres/types/Meeting'
+import TeamPromptMeeting from './TeamPromptMeeting'
 
 export const newMeetingFields = () => ({
   id: {
@@ -151,7 +152,8 @@ const NewMeeting: GraphQLInterfaceType = new GraphQLInterfaceType({
     const resolveTypeLookup = {
       retrospective: RetrospectiveMeeting,
       action: ActionMeeting,
-      poker: PokerMeeting
+      poker: PokerMeeting,
+      teamPrompt: TeamPromptMeeting
     }
     return resolveTypeLookup[meetingType]
   }
