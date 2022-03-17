@@ -17,7 +17,8 @@ module.exports = {
   devtool: 'eval',
   mode: 'none',
   node: {
-    __dirname: false
+    __dirname: false,
+    global: false
   },
   entry: {
     createMigration: [DOTENV, path.join(TOOLBOX_SRC, 'migrate-create.ts')],
