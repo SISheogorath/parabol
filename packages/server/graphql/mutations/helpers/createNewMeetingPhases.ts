@@ -7,8 +7,7 @@ import {
   LAST_CALL,
   REFLECT,
   UPDATES,
-  VOTE,
-  RESPONSES
+  VOTE
 } from 'parabol-client/utils/constants'
 import {MeetingTypeEnum} from '../../../postgres/types/Meeting'
 import toTeamMemberId from '../../../../client/utils/relay/toTeamMemberId'
@@ -131,7 +130,7 @@ const createNewMeetingPhases = async (
         case FIRST_CALL:
         case LAST_CALL:
         case 'SCOPE':
-        case RESPONSES:
+        case 'RESPONSES':
           return new GenericMeetingPhase(phaseType, durations)
         default:
           throw new Error(`Unhandled phaseType: ${phaseType}`)
